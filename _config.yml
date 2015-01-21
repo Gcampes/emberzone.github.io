@@ -34,5 +34,5 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      cover_image:  /images/posts/typhoon-vongfong-iss.jpg
+      cover_image:  /images/header.jpg
 
