@@ -1,0 +1,277 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+$container-large-desktop: 1170px;
+
+$font-family-base: "Avenir Next", "Open Sans", "Lucida Console", "Menlo", monospace;
+$headings-font-family: "Roboto", "Helvetica", Arial, sans-serif;
+$headings-font-weight: 700;
+
+$font-size-base: 16px;
+$font-size-h1: floor(($font-size-base * 2));
+$font-size-h2: floor(($font-size-base * 1.4));
+$font-size-h3: floor(($font-size-base * 1));
+$font-size-h4: floor(($font-size-base * 1));
+$font-size-h5: floor(($font-size-base * 1));
+$font-size-h6: floor(($font-size-base * 1));
+$blockquote-font-size: floor(($font-size-base * 1.25));
+$line-height-base: 1.8;
+$headings-line-height: 1.3;
+
+$body-bg: #0E0E0E;
+
+$navbar-default-bg: #0E0E0E;
+$navbar-default-border: #fff;
+$navbar-default-brand-color: #333;
+$navbar-height: 60px;
+
+$navbar-inverse-bg: #0E0E0E;
+$navbar-inverse-link-color: #000;
+$navbar-inverse-toggle-border-color: #fff;
+$navbar-inverse-color: rgba(#000, 0.75);
+$navbar-inverse-toggle-hover-bg: rgba(#ff0, 0.2);
+$navbar-inverse-link-color: white;
+$navbar-inverse-link-hover-color: white;
+$navbar-inverse-brand-hover-color: white;
+$navbar-inverse-border: #0e0e0e;
+$text-color: #9e9e9e;
+
+$gray-dark: #555;
+$gray: #888;
+$btn-default-color: #555;
+$gray-light: #aaa;
+
+$brand-primary: #e07280;
+$code-color: #555;
+$code-bg: #f5f5f5;
+$headings-color: #c7c7c7;
+
+// http:/flatuicolors.com/
+$dark: #3d566e;
+$dark-brand-primary: #5b7fa4; // Set saturation to 50
+$turquoise: #1abc9c;
+$green: #2ecc71;
+$blue: #3498db;
+$purple: #9b59b6;
+$orange: #e67e22;
+$red: #e74c3c;
+$white: #fff;
+
+$link-color: $blue;
+
+{% unless site.data.theme.color == "default" %}
+  $theme-color: ${{ site.data.theme.color; }};
+  $navbar-inverse-bg: $theme-color;
+  @if $theme-color == $dark {
+    $brand-primary: $dark-brand-primary;
+  } @else {
+    $brand-primary: $theme-color;
+  }
+
+  @if $theme-color == $white {
+    $brand-primary: #3d3d3d;
+  }
+{% endunless %}
+
+
+@import 'bootstrap';
+
+$space-xs: $line-height-computed * 1;
+$space-sm: $line-height-computed * 1.5;
+$space-md: $line-height-computed * 2;
+
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  border: 25px solid white;
+}
+
+
+h2 {
+  margin-top: $line-height-computed * 1.5;
+  margin-bottom: $line-height-computed * 0.25;
+}
+h3 {
+  margin-bottom: $line-height-computed * 0.25;
+  text-transform: uppercase;
+}
+
+.navbar-inverse {
+  background: #0E0E0E;
+  padding: 2em 0 2em 0;
+
+  .navbar-brand {
+    font-family: $font-family-base;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+
+    strong {
+      font-weight: 400px;
+    }
+  }
+}
+
+.lead {
+  @media (min-width: $screen-sm-min) {
+    font-size: $blockquote-font-size;
+  }
+}
+
+.btn {
+  font-family: $headings-font-family;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.cover-image {
+  background-image: cover;
+  height: 420px;
+  margin: -56px 0 2em 0;
+  width: 100%;
+}
+
+.section-header {
+  margin-top: 0;
+}
+.section-header-archive {
+  margin-top: 0;
+}
+.section-header-archive ~ .section-header-archive {
+  margin-top: $space-md;
+}
+
+.post-header {
+  margin-bottom: $space-xs;
+}
+.post-title-home {
+  margin: 0;
+  a {
+    color: inherit;
+  }
+}
+.post-excerpt-home {
+  margin-bottom: $space-md;
+}
+.post-title-main {
+  margin: 0;
+}
+.post-title-archive {
+  margin-right: 1em;
+  font-weight: $headings-font-weight;
+  font-family: $headings-font-family;
+}
+.post-content {
+  margin-bottom: $space-md;
+}
+.post-content img,
+.post-excerpt-home img,
+.post-nav img {
+  @extend .img-responsive;
+}
+.post-footer {
+  margin-bottom: $space-md;
+  padding-top: $space-sm;
+  border-top: 1px solid $gray-lighter;
+}
+.post-navs {
+  margin-bottom: $space-md;
+}
+.post-nav {
+  margin-bottom: $space-sm;
+}
+.post-title-link {
+  margin-top: 0;
+}
+
+.navbar-brand {
+  font-weight: $headings-font-weight;
+}
+.navbar {
+  font-family: $headings-font-family;
+}
+.navbar-static-top {
+  margin-bottom: $space-md;
+}
+
+.page-archive {
+  margin-bottom: $space-md;
+}
+
+.footer {
+  margin: $space-sm 0 $space-sm;
+  color: $gray-light;
+  font-size: $font-size-small;
+}
+
+.home-read-more {
+  margin-bottom: 40px;
+}
+
+aside {
+  font-size: 0.8em;
+
+  img {
+    width: 90%;
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 2em;
+    border: 5px solid white;
+    border-radius: 100%;
+  }
+}
+
+.gist {
+  table {
+    width: auto !important;
+    border: none !important;
+  }
+  td {
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+    &.line-data {
+      border-right: none !important;
+      line-height: 1.4 !important;
+    }
+  }
+}
+
+.highlight pre {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    padding: 0;
+    border: solid 1px #d9d9d9;
+    border-radius: 0;
+    background-color: #353535;
+    counter-reset: line-numbering;
+    white-space: pre;
+    word-wrap: inherit;
+    word-break: inherit;
+    line-height: 23px;
+}
+
+/* Add to css/syntax.css */
+.highlight .lineno {
+  display:inline-block;
+  padding: 0 5px;
+  border-right:1px solid #ccc;
+  color: #ccc;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.highlight pre code { display: block; overflow-x: auto; white-space: pre; word-wrap: normal; }
+
+@import 'pygments-tomorrow';
+
+#disqus_thread {
+  margin-top: 9em;
+  border-top: 1px solid white;
+}

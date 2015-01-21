@@ -1,0 +1,38 @@
+# Site settings
+title: Ember <strong>Zone</strong>
+email: your-email@domain.com
+description: > # this means to ignore newlines until "baseurl:"
+  Ember Zone is a blog about Ember.js, pulling tips and tricks from real world projects.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://ember.zone" # the base hostname & protocol for your site
+twitter_username: emberdotzone
+github_username:  emberzone
+
+# Build settings
+markdown: kramdown
+
+# gems:
+#   - jemoji
+exclude:
+  - "README.md"
+  - "CHANGELOG.md"
+  - "CNAME"
+  - "Gemfile"
+  - "Gemfile.lock"
+permalink: :title
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      cover_image:  /images/header.jpg
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      cover_image:  /images/posts/typhoon-vongfong-iss.jpg
+
