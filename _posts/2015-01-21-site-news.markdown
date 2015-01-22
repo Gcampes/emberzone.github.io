@@ -9,7 +9,7 @@ categories:
 
 Greetings, Ember fiends!
 
-The Ember Zone is not a cold, dead place. I've been busy with client work and also less inclined to post because Wordpress is such a drag. So I converted all of the content to Markdown and started a Jekyll blog using Github Pages for hosting. As a result, the content is now Open Source, licensed under the MIT license. So if you see anything that you think doesn't make sense, feel free to <a href='https://github.com/emberzone/emberzone.github.io'>open a PR!</a> I also took the opporunity to cook up a new design which hopefully focuses more on the content.
+The Ember Zone is not a cold, dead place. I've been busy with client work and also less inclined to post because Wordpress is such a drag. So I converted all of the content to Markdown and started a Jekyll blog using Github Pages for hosting. As a result, the content is now Open Source, licensed under the MIT license. So if you see anything that you think doesn't make sense, feel free to <a href='https://github.com/emberzone/emberzone.github.io'>open a PR!</a> I also took the opportunity to cook up a new design which hopefully focuses more on the content.
 
 I've also been waiting and watching Ember-CLI, which is looking ever more mature to the point where I don't feel that I could spend time writing something only for it to be invalidated soon after with a major change.
 
