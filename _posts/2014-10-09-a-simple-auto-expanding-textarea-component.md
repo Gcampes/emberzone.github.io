@@ -23,10 +23,11 @@ And that will render a basic text area bound to the `notes` property. But it wil
 
 First of all, we create a new `Component` that `extends` the Ember `TextArea`:
 
-    App.AutoExpandingTextAreaComponent = Ember.TextArea.extend({
-      ... snip ...
-    });
-
+{%highlight javascript linenos%}
+App.AutoExpandingTextAreaComponent = Ember.TextArea.extend({
+  ... snip ...
+});
+{%endhighlight%}
 
 If we just left the new `AutoExpandingTextAreaComponent` as is above, we could use it in any template with `{{auto-expanding-text-area value=notes}}` and its behaviour would be exactly the same as the default `textarea`. So far, so obvious.
 
