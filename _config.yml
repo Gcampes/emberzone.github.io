@@ -11,8 +11,8 @@ github_username:  emberzone
 # Build settings
 markdown: kramdown
 
-# gems:
-#   - jemoji
+gems:
+  - jekyll-sitemap
 exclude:
   - "README.md"
   - "CHANGELOG.md"
