@@ -5,7 +5,7 @@
 
 $container-large-desktop: 1170px;
 
-$font-family-base: Georgia, serif;
+$font-family-base: 'Merriweather', Georgia, serif;
 $headings-font-family: "Helvetica", Arial, sans-serif;
 $headings-font-weight: 700;
 
@@ -125,6 +125,14 @@ h3 {
 
 .navbar-inverse {
   background: #fff;
+  background-color: #dfdfdf;
+  background-image: -webkit-gradient(radial, 50% 0%,0,50% 0%,200, from(rgb(255, 255, 255)), to(rgb(223, 223, 223)));
+  background-image: -webkit-radial-gradient(50% 0%, rgb(223, 223, 223), rgb(255, 255, 255));
+  background-image: -moz-radial-gradient(50% 0%, rgb(223, 223, 223), rgb(255, 255, 255));
+  background-image: -o-radial-gradient(50% 0%, rgb(223, 223, 223), rgb(255, 255, 255));
+  background-image: -ms-radial-gradient(50% 0%, rgb(223, 223, 223), rgb(255, 255, 255));
+  background-image: radial-gradient(50% 0%, rgb(223, 223, 223), rgb(255, 255, 255));
+
   padding: 2em 0 2em 0;
 
   .navbar-brand {
