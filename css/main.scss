@@ -5,11 +5,11 @@
 
 $container-large-desktop: 1170px;
 
-$font-family-base: "Avenir Next", "Open Sans", "Lucida Console", "Menlo", monospace;
-$headings-font-family: "Roboto", "Helvetica", Arial, sans-serif;
+$font-family-base: Georgia, serif;
+$headings-font-family: "Helvetica", Arial, sans-serif;
 $headings-font-weight: 700;
 
-$font-size-base: 16px;
+$font-size-base: 18px;
 $font-size-h1: floor(($font-size-base * 2));
 $font-size-h2: floor(($font-size-base * 1.4));
 $font-size-h3: floor(($font-size-base * 1));
@@ -17,7 +17,7 @@ $font-size-h4: floor(($font-size-base * 1));
 $font-size-h5: floor(($font-size-base * 1));
 $font-size-h6: floor(($font-size-base * 1));
 $blockquote-font-size: floor(($font-size-base * 1.25));
-$line-height-base: 1.8;
+$line-height-base: 2.1;
 $headings-line-height: 1.3;
 
 $body-bg: #fff;
@@ -84,7 +84,6 @@ $space-md: $line-height-computed * 2;
 
 body {
   -webkit-font-smoothing: subpixel-antialiased;
-  border: 25px solid #eee;
 }
 
 
@@ -97,6 +96,33 @@ h3 {
   text-transform: uppercase;
 }
 
+.navbar-header {
+  text-align: center;
+  float: none;
+  margin: 0;
+  font-size: 2em;
+}
+
+.navbar > .container .navbar-brand {
+  margin: 0;
+  font-family: 'Lekton', sans-serif;
+}
+
+.navbar-nav > li {
+  float: none;
+}
+
+.navbar-nav.nav {
+  float: none;
+  text-align: center;
+
+  text-transform: uppercase;
+  font-family: 'Helvetica', Arial;
+  font-size: 0.8em;
+  font-weight: bold;
+  letter-spacing: 0px;
+}
+
 .navbar-inverse {
   background: #fff;
   padding: 2em 0 2em 0;
@@ -106,6 +132,9 @@ h3 {
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 4px;
+
+    float: none;
+    text-align: center;
 
     strong {
       font-weight: 400px;
@@ -240,38 +269,63 @@ aside {
   }
 }
 
-.highlight pre {
-    overflow-x: auto;
-    margin-bottom: 30px;
-    padding: 0;
-    border: solid 1px #d9d9d9;
-    border-radius: 0;
-    background-color: #353535;
-    counter-reset: line-numbering;
-    white-space: pre;
-    word-wrap: inherit;
-    word-break: inherit;
-    line-height: 23px;
-}
-
-/* Add to css/syntax.css */
-.highlight .lineno {
-  display:inline-block;
-  padding: 0 5px;
-  border-right:1px solid #ccc;
-  color: #ccc;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.highlight pre code { display: block; overflow-x: auto; white-space: pre; word-wrap: normal; }
-
 @import 'pygments-tomorrow';
 
 #disqus_thread {
   margin-top: 9em;
   border-top: 1px solid white;
+}
+.bio {
+  font-family: Georgia, serif;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 5em;
+  margin-top: 2em;
+
+  img {
+    display: block;
+    margin: 0px auto;
+  }
+}
+/* columns of same height styles */
+.row-same-height {
+    display: table;
+    width: 100%;
+}
+
+.col-xs-height {
+    display: table-cell;
+    float: none !important;
+}
+
+@media (min-width: 768px) {
+    .col-sm-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-height {
+        display: table-cell;
+        float: none !important;
+    }
+}
+
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+
+.col-middle {
+    vertical-align:middle;
+}
+
+.col-bottom {
+    vertical-align:bottom;
 }
