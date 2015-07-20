@@ -331,3 +331,28 @@ aside {
 .col-bottom {
     vertical-align:bottom;
 }
+
+#toc {
+    float: right;
+      padding-left: 50px;
+}
+
+@media (max-width: 768px) {
+  #toc {
+    float: none;
+    padding: 0;
+  }
+}
+.clickable-header {
+  cursor:pointer;
+}
+.clickable-header:hover {
+  text-decoration:underline;
+}
+.top-level-header {
+  display:inline;
+}
+.back-to-top {
+  margin-left:5px;
+  cursor:pointer;
+}
