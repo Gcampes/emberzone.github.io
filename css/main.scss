@@ -277,9 +277,11 @@ aside {
 }
 .bio {
   font-family: Georgia, serif;
+  font-weight: normal;
+  text-transform: none;
   font-style: italic;
   text-align: center;
-  margin-bottom: 5em;
+  margin-bottom: 2em;
   margin-top: 2em;
 
   img {
