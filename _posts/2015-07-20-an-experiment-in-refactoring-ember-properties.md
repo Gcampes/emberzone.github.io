@@ -1,8 +1,8 @@
 ---
-title: Refactoring Ember Properties
+title: An experiment in refactoring Ember Properties
 author: John McDowall
 layout: post
-permalink: /refactoring-ember-properties/
+permalink: /an-experiment-in-refactoring-ember-properties/
 draft: true
 dsq_thread_id:
 categories:
