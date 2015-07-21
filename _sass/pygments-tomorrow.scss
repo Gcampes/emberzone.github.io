@@ -1,5 +1,6 @@
 code {
   font-family: "Inconsolata", mono-space;
+  border: 1px solid darken($code-bg, 10%);
 }
 .highlight pre {
     overflow-x: auto;
