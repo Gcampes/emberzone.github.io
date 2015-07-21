@@ -46,6 +46,20 @@ Here's one way you can clean them up.
 ## Higher Order Functions 
 Any function that takes another function as a parameter, or returns a function as its result is a Higher Order Function. Given that functions are first class citizens in Javascript, it's pretty easy, even casual to use Higher Order Functions to clean up functions that differ only by name and the property referenced. 
 
+## Ember's `defineProperty` Method
+
+Ember provides a method which allows you to perform a basic level of meta-programming by defining properties at runtime. The parameters for `defineProperty` are (basically):
+
+- The object you want to define the new property on
+- The name of the new property
+- A 'Descriptor' which for our purposes will be a Computed Property to be attached to the new property
+
+Which looks like this:
+
+`Ember.defineProperty(this, myCpPropName, Ember.computed('propName', function(){...});`
+
+We're now going to use a Higher Order Function to pass back to `defineProperty` so that the Computed Property has a dynamic value.
+
 ## Using Higher Order Functions to reduce cruft
 
 Note that this is a trivial example for the purposes of showing how Higher Order Functions _can_ be used, and the example is chosen to illustrate the technique. 
@@ -63,6 +77,7 @@ let LoginComponent = Ember.Component.extend({
 
   // Builds a field property name from a field name.
   _fieldPropName(field) {
+    // Utilize ES6 string interpolation. 
     return `has${field.capitalize()}`;
   },
 
