@@ -3,7 +3,7 @@ title: An experiment in refactoring Ember Properties
 author: John McDowall
 layout: post
 permalink: /an-experiment-in-refactoring-ember-properties/
-draft: true
+draft: false
 dsq_thread_id:
 categories:
   - ember-core
@@ -65,8 +65,11 @@ let computed = Ember.computed;
 
 // This is our Higher Order Function, that we are passing in the field name
 // to so that it can be captured by the Computed Property and returned as the
-// function to be called. We define it here so that it does not expose itself
-// publicly via the component. 
+// function to be called. 
+//
+// We define it here because if we defined it on the Component we would expose
+// a method on the public API which is not usable outside the component, and 
+// only returns a descriptor. 
 let has = (field) => { return computed.notEmpty(field); };
 
 let LoginComponent = Ember.Component.extend({
@@ -144,4 +147,4 @@ That said, I feel like there's the bones of a simple validation system here. You
 
 It was an interesting diversion for me, and hopefuly you learned something new. 
 
-_Eternal thanks to the ever patient and helpful Alex Matchneer for his input on this article!_
+_Eternal thanks to the ever patient and helpful Alex Matchneer, and Todd Smith-Salter for their input on this article!_
