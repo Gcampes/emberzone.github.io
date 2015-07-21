@@ -2,6 +2,7 @@
 ---
 
 {% for post in site.posts limit:site.data.theme.num_home_posts %}
+{% unless post.draft %}
 <div class="post-header-home">
   <h1 class="post-title-home">
     <a href="{{ post.url | prepend:site.baseurl }}">{{ post.title }}</a>
@@ -12,6 +13,7 @@
   {{ post.excerpt }}
   <p class="text-right"><a href="{{ post.url | prepend:site.baseurl }}">Continue Reading &rarr;</a></p>
 </div>
+{% endunless %}
 {% endfor %}
 <hr>
 <div class="home-read-more">
