@@ -9,14 +9,13 @@ categories:
   - ember-core
 ---
 
-You might have run across the situation where you have lots of properties in a Controller or Component, and they have associated Computed Properties that calculate some presence value. 
+You might have run across the situation where you have lots of properties in a Controller or Component, and they have associated Computed Properties that calculate some presence value. They end up feeling like repetitive boilerplate. 
 
-Here's a way to refactor that proliferation of property accessors using Higher Order Functions. 
+How might you go about cleaning them up? Perhaps auto-generating them?
 
 ## Typical Ember Example
 
-You may have seen, or written code like this in Ember:
-
+Specifically, what kind of code am I talking about? Something like this:
 
 {%highlight javascript linenos%}
 import Ember from 'ember';
@@ -39,7 +38,7 @@ Typically these properties are the results of requirements from the UI to displa
 Let's look at how we could save ourselves from manually having to define lots of boilerplate properties.
 
 ## Higher Order Functions 
-Any function that takes another function as a parameter, or returns a function as its result is a Higher Order Function. Given that functions are first class citizens in Javascript, it's pretty easy, even casual to use Higher Order Functions to clean up functions that differ only by name and the property referenced. 
+Any function that takes another function as a parameter, or returns a function as its result is a Higher Order Function. Given that functions are first class citizens in Javascript, it's pretty easy, even casual to use Higher Order Functions to clean up functions that differ only by name and the property referenced. Can we use Higher Order Functions to create the `notEmpty` Computed Properties for us? Let's see. 
 
 ## Take 1: Using Ember's `defineProperty` Method
 
@@ -64,7 +63,6 @@ import Ember from 'ember';
 
 let computed = Ember.computed;
 
-
 // This is our Higher Order Function, that we are passing in the field name
 // to so that it can be captured by the Computed Property and returned as the
 // function to be called. We define it here so that it does not expose itself
@@ -82,7 +80,7 @@ let LoginComponent = Ember.Component.extend({
   },
 
   // Run once on component init, sets the default empty values for the field
-  // and generated the hasPropertyName propertiese for each field.
+  // and generated the hasPropertyName properties for each field.
   defineFieldProperties: Ember.on('init', function() {
     this.UI_FIELDS.forEach((field) => {
       this.set(field, '');
@@ -140,10 +138,10 @@ So obviously this got a little messy looking, as changes to optimize for perform
 
 ## Summary
 
-Higher Order Functions have many uses, and this is a great example of where you can quickly apply them to clean up some duplication. 
+At the end of our exploration, we can see how it might be possbile to clean up and auto generate boilerplate Computed Properties. In the end things looked a litlle messy, and obviously you wouldn't use this technique to clean up two properties. 
 
-An interesting approach would be to build a simple form validation system on this technique with some pre-canned validators that are higher order functions along the lines of the `has` function, for example `minLength`, `maxLength` and so on. Then the `UI_FIELDS` value would be expanded to an object, and each field name would have associated keys describing the validation to use, defaults, etc. 
+That said, I feel like there's the bones of a simple validation system here. You could build a simple form validation system on this technique with some pre-canned validators that are higher order functions along the lines of the `has` function, for example `minLength`, `maxLength` and so on. Then the `UI_FIELDS` value would be expanded to an object, and each field name would have associated keys describing the validation to use, defaults, etc. 
 
-Maybe this example is a little contrived and ended up being a little messy or even of questionable value, but it was still a cool exploration of how Ember works for me, and hopefully it's useful for you.
+It was an interesting diversion for me, and hopefuly you learned something new. 
 
 _Eternal thanks to the ever patient and helpful Alex Matchneer for his input on this article!_
