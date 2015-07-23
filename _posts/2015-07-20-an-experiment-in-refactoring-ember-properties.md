@@ -147,4 +147,4 @@ That said, I feel like there's the bones of a simple validation system here. You
 
 It was an interesting diversion for me, and hopefuly you learned something new. 
 
-_Eternal thanks to the ever patient and helpful Alex Matchneer, and Todd Smith-Salter for their input on this article!_
+_Eternal thanks to the ever patient and helpful Alex Matchneer, Todd Smith-Salter and Kelly Sutton for their input on this article!_
