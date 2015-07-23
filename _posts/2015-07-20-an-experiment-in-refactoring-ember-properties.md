@@ -61,7 +61,7 @@ And with that in mind lets look at the solution:
 {%highlight javascript linenos%}
 import Ember from 'ember';
 
-const { computed } = Ember;
+const { computed, on } = Ember;
 
 // This is our Higher Order Function, that we are passing in the field name
 // to so that it can be captured by the Computed Property and returned as the
@@ -84,7 +84,7 @@ let LoginComponent = Ember.Component.extend({
 
   // Run once on component init, sets the default empty values for the field
   // and generated the hasPropertyName properties for each field.
-  defineFieldProperties: Ember.on('init', function() {
+  defineFieldProperties: on('init', function() {
     this.UI_FIELDS.forEach((field) => {
       this.set(field, '');
       let propName = this._fieldPropName(field);
