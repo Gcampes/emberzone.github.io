@@ -61,7 +61,7 @@ And with that in mind lets look at the solution:
 {%highlight javascript linenos%}
 import Ember from 'ember';
 
-let computed = Ember.computed;
+const { computed } = Ember;
 
 // This is our Higher Order Function, that we are passing in the field name
 // to so that it can be captured by the Computed Property and returned as the
@@ -70,7 +70,7 @@ let computed = Ember.computed;
 // We define it here because if we defined it on the Component we would expose
 // a method on the public API which is not usable outside the component, and 
 // only returns a descriptor. 
-let has = (field) => { return computed.notEmpty(field); };
+const has = (field) => { return computed.notEmpty(field); };
 
 let LoginComponent = Ember.Component.extend({
 
@@ -106,17 +106,17 @@ The best way to go about this is to pre-generate an Object with the properties a
 {%highlight javascript linenos%}
 import Ember from 'ember';
 
-let computed = Ember.computed;
+const { computed, on } = Ember;
 
 // Our Higher Order Function, as before
-let has = (field) => { return computed.notEmpty(field); }
+const has = (field) => { return computed.notEmpty(field); }
 
 // The Component UI fields as before. 
 const UI_FIELDS = ['userName', 'password'];
 
 // Pre-generate an object with the properties and computed
 // properties that we need. 
-var processedAttrs = {};
+let processedAttrs = {};
 UI_FIELDS.forEach( (field) => {
   processedAttrs[field] = '';
   processedAttrs[`has${field.capitalize()}`] = has(field);
@@ -125,7 +125,7 @@ UI_FIELDS.forEach( (field) => {
 // Create a Component just as you normally would. 
 let LoginComponent = Ember.Component.extend({
   // Your usual Ember component stuff in here as needed
-  debugOutput: Ember.on('init', function(){
+  debugOutput: on('init', function(){
     console.log('hasPassword=', this.get('hasPassword'));
     console.log('hasUserName=', this.get('hasUserName'));
   })
