@@ -218,6 +218,7 @@ blockquote {
   margin-bottom: $space-md;
   padding-top: $space-sm;
   border-top: 1px solid $gray-lighter;
+  font-size: .8em;
 }
 .post-navs {
   margin-bottom: $space-md;
@@ -369,4 +370,28 @@ aside {
 .back-to-top {
   margin-left:5px;
   cursor:pointer;
+}
+
+.fork {
+  border: 1px solid darken(#F7E0DE, 10%);
+  padding: 2em;
+  background-color: #F7E0DE;
+
+  img {
+    float: left;
+    padding-right: 1em;
+    height: 64px;
+  }
+
+  span {
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 1.6;
+    height: 64px;
+  }
+}
+
+.post-ctas {
+  border: 1px solid #efefef;
+  background-color: #fcfcfc;
 }
