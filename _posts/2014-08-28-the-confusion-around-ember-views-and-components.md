@@ -39,7 +39,7 @@ Eventually I found the section in the Gaslight video training: 10.2 Components Q
 
 <img src="{{ "/images/posts/Screen-Shot-2014-08-27-at-9.04.52-PM-1024x912.png" | prepend:site.baseurl }}" alt="Tom Dale" width="300" height="267" class="alignnone size-medium wp-image-78" />
 
-> Tom Dale: There was a general question about Handlebars, and probably some of you have gone through older Emer app examples and probably seen a lot of View classes. Basically don&#8217;t use Views is my answer. Since those examples were written we&#8217;ve added a lot more features to Handlerbars [..] we&#8217;ve added Components, [..] in general I would say Views are not something that we would expect most developers to be writing&#8230; they&#8217;re more of an internal book-keeping object at this point. You should use Components.
+> Tom Dale: There was a general question about Handlebars, and probably some of you have gone through older Ember app examples and probably seen a lot of View classes. Basically don&#8217;t use Views is my answer. Since those examples were written we&#8217;ve added a lot more features to Handlerbars [..] we&#8217;ve added Components, [..] in general I would say Views are not something that we would expect most developers to be writing&#8230; they&#8217;re more of an internal book-keeping object at this point. You should use Components.
 
 Then at 30m:
 
